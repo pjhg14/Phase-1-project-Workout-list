@@ -25,3 +25,6 @@
 // Wednesday: work on stretch goals, try finding outside API
 
 // Thursday: finish goals, CSS
+
+
+// fetch()
