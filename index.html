@@ -9,6 +9,48 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Begin project</h1>
+    <header>
+        <h1>Workout To-do list</h1>
+    </header>
+    
+    <div id="content">
+        <!-- Hide until button is pressed -->
+        <div id="add-exercise" class="hidden">
+            <h3>Add new exercise</h3>
+
+            <form id="add-exercise-form">
+                <input type="text" placeholder="New Exercise">
+                <input type="submit">
+            </form> 
+        </div>
+
+        <button id="show-form">Add new Exercise</button>
+
+        <!-- The list of chosen exercises -->
+        <h2> Added Exercises </h2>
+        <div id="user-list">
+            <!-- Test divs's -->
+            <div>
+                <!-- Add div's here -->
+                <!-- <p>[Image goes here]</p>
+                <p>exercise name</p>
+                <p>exercise zone</p>
+                <p>sets: [set] reps: [rep]</p>
+                <p>[Does/Does not] require equipment</p> -->
+            </div>
+        </div>
+        
+        <!-- The list that will be populated from server -->
+        <h2> Available exercises</h2>
+        <div id="exercise-cards">
+            <div>
+                <!-- Add div's here -->
+                <!-- <p>[Image goes here]</p>
+                <p>exercise name</p>
+                <p>exercise zone</p>
+                <p>[Does/Does not] require equipment</p> -->
+            </div>
+        </div>
+    </div>
 </body>
 </html>
