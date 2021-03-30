@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="./src/index.js"></script>
     <link rel="stylesheet" href="./src/style.css"/>
-    <title>Document</title>
+    <title>RegemAid</title>
 </head>
 <body>
     <header>
@@ -29,26 +29,37 @@
         <!-- The list of chosen exercises -->
         <h2> Added Exercises </h2>
         <div id="user-list">
-            <!-- Test divs's -->
+            <!-- Add div's here -->
+            <!-- Test div -->
             <div>
-                <!-- Add div's here -->
-                <!-- <p>[Image goes here]</p>
-                <p>exercise name</p>
+                <img src="https://julielohre.com/wp-content/uploads/2017/11/Barbell-Back-Squat.jpg" alt="exercise img" class="exercise-img"/>
+                <h4>exercise name</h4>
                 <p>exercise zone</p>
+                <p>[Does/Does not] require equipment</p> 
                 <p>sets: [set] reps: [rep]</p>
-                <p>[Does/Does not] require equipment</p> -->
+                <label for="is-done">Done?: </label>
+                <input type="checkbox" name="is-done">
+                <br/>
+                <button>remove</button>
             </div>
         </div>
         
         <!-- The list that will be populated from server -->
         <h2> Available exercises</h2>
-        <div id="exercise-cards">
-            <div>
-                <!-- Add div's here -->
-                <!-- <p>[Image goes here]</p>
-                <p>exercise name</p>
+        <div id="card list">
+            <!-- Add div's here -->
+            <div class="card">
+                <img src="https://julielohre.com/wp-content/uploads/2017/11/Barbell-Back-Squat.jpg" alt="exercise img" class="exercise-img"/>
+                <h4>exercise name</h4>
                 <p>exercise zone</p>
-                <p>[Does/Does not] require equipment</p> -->
+                <form>
+                    <label for="set-field">Sets:</label>
+                    <input type="text" name="set-field" placeholder="# of sets"/>
+                    <label for="rep-field">Reps:</label>
+                    <input type="text" name="rep-field" placeholder="# of reps"/>
+                    <br/>
+                    <input type="submit" value="Add Exercise">
+                </form> 
             </div>
         </div>
     </div>

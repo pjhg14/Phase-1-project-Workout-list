@@ -1,25 +1,59 @@
 body {
-    text-align: center;
     justify-content: center;
 }
 
+header {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
 #user-list {
+    text-align: center;
     display: flex;
-    overflow-x: auto;
+    overflow: auto;
     margin: 1rem 0;
-    max-width: calc(100vw - 2rem);
+    white-space: nowrap;
 }
 
 #user-list div {
+    display: inline-block;
     border-style: solid;
     border-color: rgb(153, 153, 153);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 2px;
+    padding-left: 2px;
+    line-height: 1px;
+}
+
+.card {
+    text-align: center;
     padding: 5px;
+    width: 215px;
+    height: 400px;
+    display: inline-block;
+    margin: 10px;
+    border-style: solid;
+    border-color: black;
+    box-shadow: 3px 4px gray;
+    line-height: 25px;
 }
 
-#exercise-cards {
-    /* Add card css here */
+img.exercise-img {
+    justify-self: center;
+    height: 200px;
+    width: 210px;
+    border-color: black;
+    border-style: solid;
 }
 
-div#add-exercise.hidden {
+div.card input[type=text] {
+    width: 50px;
+}
+
+div#user-list.hidden {
     display: none;
 }
