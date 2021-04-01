@@ -4,10 +4,60 @@ body {
 
 header {
     text-align: center;
+    border: 1px solid black;
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+/* header h1 {
+    border: 1px solid black;
+} */
+
+/* #viewport {
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    overflow: hidden; 
+    border-radius: 50%;
+} */
+
+#user-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    /* border: 1px solid black; */
+}
+
+#logo-img {
+    width: 150px;
+    height: 80px;
+    border: 1px solid black;
 }
 
 h2 {
     text-align: center;
+}
+
+#add-container {
+    height: auto;
+    border-style: solid;
+    border-color: gray;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    background-color: gray;
+    padding: 5px;
+}
+
+#add-container.collapse {
+    height: 0px;
+    padding: 0px;
+}
+
+#add-container.collapse div {
+    display: none;
 }
 
 #user-list {
@@ -52,8 +102,4 @@ img.exercise-img {
 
 div.card input[type=text] {
     width: 50px;
-}
-
-div#user-list.hidden {
-    display: none;
 }

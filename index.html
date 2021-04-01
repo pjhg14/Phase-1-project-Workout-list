@@ -10,19 +10,29 @@
 </head>
 <body>
     <header>
+        <!-- logo -->
+        <img id="logo-img" src="" alt="Logo Img"/>
         <h1>Workout To-do list</h1>
+        <!-- user icon -->
+        <div id="viewport">
+            <img id="user-img" src="./assets/user_default.png" alt="Current User"/>
+        </div>
     </header>
     
     <div id="content">
-        <!-- Hide until button is pressed -->
-        <div id="add-exercise" class="hidden">
-            <h3>Add new exercise</h3>
-
-            <form id="add-exercise-form">
-                <input type="text" placeholder="New Exercise">
-                <input type="submit">
-            </form> 
+        <!-- Remove "collapse" class to show, re-add to hide-->
+        <div id="add-container" class="collapse">
+            <div id="add-exercise">
+                <h3>Add new exercise</h3>
+    
+                <form id="add-exercise-form">
+                    <input type="text" placeholder="New Exercise">
+                    <input type="submit">
+                </form> 
+            </div>
         </div>
+        <!-- Hide until button is pressed -->
+        
 
         <button id="show-form">Add new Exercise</button>
 
