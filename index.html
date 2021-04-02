@@ -4,88 +4,101 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="./src/index.js"></script>
+    <!-- <script defer src="./src/index.js"></script> -->
     <link rel="stylesheet" href="./src/style.css"/>
+    <!-- testing file -->
+    <script defer src="./src/test.js"></script>
     <title>RegemAid</title>
 </head>
 <body>
-    <header>
-        <img id="logo-img" src="" alt="Logo Img"/>
-        <h1>Workout To-do list</h1>
-        <div id="dropdown">
-            <!-- switch to "not currently logged in" img, maybe a white ! in a red background -->
-            <img id="user-img" src="./assets/user_default.png" alt="Current User"/>
-            <div id="dd-content">
-                <p>Not currently logged in</p>
-                <div id="log-in">
-                    <button id="li-button">Log In</button>
-                    <form id="log-in-form" class="dd-form">
-                        <input type="text" name="username" placeholder="Username">
-                        <input type="submit" value="Enter">
-                    </form>
+    <div id="box">
+        <!-- Heading title -->
+        <header>
+            <img id="logo-img" src="" alt="Logo Img"/>
+            <h1>Workout To-do list</h1>
+            <div id="dropdown">
+                <!-- switch to "not currently logged in" img, maybe a white ! in a red background -->
+                <img id="user-img" src="./assets/user_default.png" alt="Current User"/>
+                <div id="dd-content">
+                    <p id="login-conf">Not currently logged in</p>
+                    <div id="log-in">
+                        <button id="li-button">Log In</button>
+                        <form id="log-in-form" class="dd-form">
+                            <input type="text" name="username" placeholder="Username">
+                            <input type="submit" value="Enter">
+                        </form>
+                    </div>
+                    <p>-----or-----</p>
+                    <div id="sign-up">
+                        <button id="su-button">Sign Up</button>
+                        <form id="sign-up-form" class="dd-form">
+                            <input type="text" name="username" placeholder="Username">
+                            <input type="submit" value="Enter">
+                        </form>
+                    </div>
                 </div>
-                <div id="sign-up">
-                    <button id="su-button">Sign Up</button>
-                    <form id="sign-up-form" class="dd-form">
-                        <input type="text" name="username" placeholder="Username">
-                        <input type="submit" value="Enter">
-                    </form>
+            </div>
+        </header>
+        
+        <div id="content">
+            <!-- Remove "collapse" class to show, re-add to hide-->
+            <div id="add-container" class="collapse">
+                <div id="add-exercise">
+                    <h3>Add new exercise</h3>
+        
+                    <form id="add-exercise-form">
+                        <input type="text" name="name" placeholder="Exercise Name">
+                        <input type="text" name="zone" placeholder="Zone">
+                        <input type="text" name="image" placeholder="Exercise Image">
+                        <label for="toggle">Uses Equipment?</label>
+                        <input type="checkbox" name="toggle">
+                        <input type="submit">
+                    </form> 
                 </div>
             </div>
-        </div>
-    </header>
-    
-    <div id="content">
-        <!-- Remove "collapse" class to show, re-add to hide-->
-        <div id="add-container" class="collapse">
-            <div id="add-exercise">
-                <h3>Add new exercise</h3>
-    
-                <form id="add-exercise-form">
-                    <input type="text" placeholder="New Exercise">
-                    <input type="submit">
-                </form> 
-            </div>
-        </div>
-        <!-- Hide until button is pressed -->
-        
+            <!-- Hide until button is pressed -->
+            <button id="show-form">Add new Exercise</button>
 
-        <button id="show-form">Add new Exercise</button>
-
-        <!-- The list of chosen exercises -->
-        <h2> Added Exercises </h2>
-        <div id="user-list">
-            <!-- Add div's here -->
-            <!-- Test div -->
-            <div>
-                <img src="https://julielohre.com/wp-content/uploads/2017/11/Barbell-Back-Squat.jpg" alt="exercise img" class="exercise-img"/>
-                <h4>exercise name</h4>
-                <p>exercise zone</p>
-                <p>[Does/Does not] require equipment</p> 
-                <p>sets: [set] reps: [rep]</p>
-                <label for="is-done">Done?: </label>
-                <input type="checkbox" name="is-done">
-                <br/>
-                <button>remove</button>
+            <!-- The list of chosen exercises -->
+            <div id="routine" class="empty">
+                <h2> Added Exercises </h2>
+                <div id="routine-tabs">
+                    <button id="save-construct">Save Routine</button>
+                </div>
+                <div id="user-list">
+                    <!-- Add div's here -->
+                    <!-- Test div -->
+                    <div class="routine-card">
+                        <img src="https://julielohre.com/wp-content/uploads/2017/11/Barbell-Back-Squat.jpg" alt="exercise img" class="exercise-img"/>
+                        <h4>exercise name</h4>
+                        <p>exercise zone</p>
+                        <p>[Does/Does not] require equipment</p> 
+                        <p>sets: [set] reps: [rep]</p>
+                        <label for="is-done">Done?: </label>
+                        <input type="checkbox" name="is-done">
+                        <br/>
+                        <button>remove</button>
+                    </div>
+                </div>
             </div>
-        </div>
-        
-        <!-- The list that will be populated from server -->
-        <h2> Available exercises</h2>
-        <div id="card list">
-            <!-- Add div's here -->
-            <div class="card">
-                <img src="https://julielohre.com/wp-content/uploads/2017/11/Barbell-Back-Squat.jpg" alt="exercise img" class="exercise-img"/>
-                <h4>exercise name</h4>
-                <p>exercise zone</p>
-                <form>
-                    <label for="set-field">Sets:</label>
-                    <input type="text" name="set-field" placeholder="# of sets"/>
-                    <label for="rep-field">Reps:</label>
-                    <input type="text" name="rep-field" placeholder="# of reps"/>
-                    <br/>
-                    <input type="submit" value="Add Exercise">
-                </form> 
+            
+            <!-- The list that will be populated from server -->
+            <h2> Available exercises</h2>
+            <div id="card-list">
+                <!-- Add div's here -->
+                <div class="card">
+                    <img src="https://julielohre.com/wp-content/uploads/2017/11/Barbell-Back-Squat.jpg" alt="exercise img" class="exercise-img"/>
+                    <h4>exercise name</h4>
+                    <p>exercise zone</p>
+                    <form>
+                        <label for="set-field">Sets:</label>
+                        <input type="text" name="set-field" placeholder="# of sets"/>
+                        <label for="rep-field">Reps:</label>
+                        <input type="text" name="rep-field" placeholder="# of reps"/>
+                        <br/>
+                        <input type="submit" value="Add Exercise">
+                    </form> 
+                </div>
             </div>
         </div>
     </div>
