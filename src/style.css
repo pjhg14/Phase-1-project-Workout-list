@@ -4,10 +4,84 @@ body {
 
 header {
     text-align: center;
+    border: 1px solid black;
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+/* header h1 {
+    border: 1px solid black;
+} */
+
+/* Special thanks to w3schools for their excellent tutorial for this drop-down menu 
+https://www.w3schools.com/howto/howto_css_dropdown.asp
+*/
+#dropdown {
+    position: relative;
+    float: right;
+}
+
+#dd-content {
+    display: none;
+    border: 1px solid black;
+    position: absolute;
+    right: 0;
+    min-width: 100px;
+    background-color: lightgray;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 5px;
+    z-index: 1;
+}
+
+#dropdown:hover #dd-content {
+    display: block;
+}
+
+.dd-form {
+    display: none;
+}
+
+.dd-form.show {
+    display: block;
+}
+/* End Drop-down menu---------------------------------------------------------------- */
+
+#user-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    /* border: 1px solid black; */
+}
+
+#logo-img {
+    width: 150px;
+    height: 80px;
+    border: 1px solid black;
 }
 
 h2 {
     text-align: center;
+}
+
+#add-container {
+    height: auto;
+    border-style: solid;
+    border-color: gray;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    background-color: gray;
+    padding: 5px;
+}
+
+#add-container.collapse {
+    height: 0px;
+    padding: 0px;
+}
+
+#add-container.collapse div {
+    display: none;
 }
 
 #user-list {
@@ -52,8 +126,4 @@ img.exercise-img {
 
 div.card input[type=text] {
     width: 50px;
-}
-
-div#user-list.hidden {
-    display: none;
 }
