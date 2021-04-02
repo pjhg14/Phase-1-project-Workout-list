@@ -35,59 +35,44 @@
         </div>
     </header>
     
-    <div id="content">
-        <!-- Remove "collapse" class to show, re-add to hide-->
-        <div id="add-container" class="collapse">
-            <div id="add-exercise">
-                <h3>Add new exercise</h3>
-    
-                <form id="add-exercise-form">
-                    <input type="text" placeholder="New Exercise">
-                    <input type="submit">
-                </form> 
-            </div>
-        </div>
-        <!-- Hide until button is pressed -->
-        
-
-        <button id="show-form">Add new Exercise</button>
-
-        <!-- The list of chosen exercises -->
-        <h2> My Workout </h2>
-        <div id="user-list">
-            <!-- Add div's here -->
-            <!-- Test div -->
-            <div id="workout-card">
-                <img src="https://julielohre.com/wp-content/uploads/2017/11/Barbell-Back-Squat.jpg" alt="exercise img" class="exercise-img"/>
-                <h4>exercise name</h4>
-                <p>exercise zone</p>
-                <p>[Does/Does not] require equipment</p> 
-                <p>sets: [set] reps: [rep]</p>
-                <label for="is-done">Done?: </label>
-                <input type="checkbox" name="is-done">
-                <br/>
-                <button>remove</button>
-            </div>
-        </div>
-        
-        <!-- The list that will be populated from server -->
-        <h2> Available exercises</h2>
-        <div id="card-list">
-            <!-- Add div's here -->
-            <div class="card">
-                <img src="https://julielohre.com/wp-content/uploads/2017/11/Barbell-Back-Squat.jpg" alt="exercise img" class="exercise-img"/>
-                <h4>exercise name</h4>
-                <p>exercise zone</p>
-                <form>
-                    <label for="set-field">Sets:</label>
-                    <input type="text" name="set-field" placeholder="# of sets"/>
-                    <label for="rep-field">Reps:</label>
-                    <input required type="text" name="rep-field" placeholder="# of reps"/>
-                    <br/>
-                    <input type="submit" value="Add Exercise">
-                </form> 
-            </div>
-        </div>
+    <!-- Remove "collapse" class to show, re-add to hide-->
+    <div id="add-container" class="collapse">
+        <form class="add-exercise-form">
+            <h3>Add new exercise</h3>
+            <input type="text" name="name" value="" placeholder="Enter Exercise Name" class=input-text>
+            <br />
+            <input type="text" name="image" value="" placeholder="Enter Exercise image URL" class=input-text>
+            <br />
+            <label for="zone">Choose a zone:</label>
+            <select id="zone" name="zone">
+                <option value="upper-body">Upper-Body</option>
+                <option value="lower-body">Lower-body</option>
+                <option value="core">Core</option>
+            </select>
+            <br />
+            <label for="requiresEquip">Requires equipment:</label>
+            <select id="requiresEquip" name="requiresEquip">
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+            <br />
+            <input type="submit" name="submit" value="Create New Exercise" class="submit">
+        </form> 
     </div>
+    <!-- Hide until button is pressed -->
+    <button id="show-form">Add new Exercise</button>
+
+    <!-- The list of chosen exercises -->
+    <h2> My Workout </h2>
+    <div id="user-list">
+        <!-- Add div's here -->
+    </div>
+    
+    <!-- The list that will be populated from server -->
+    <h2> Available exercises</h2>
+    <div id="card-list">
+        <!-- Add div's here -->
+    </div>
+    
 </body>
 </html>

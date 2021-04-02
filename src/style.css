@@ -76,11 +76,9 @@ h2 {
 }
 
 #add-container.collapse {
-    height: 0px;
-    padding: 0px;
-}
-
-#add-container.collapse div {
+    height: 180px;
+    padding: 10px;
+    background-color: aqua;
     display: none;
 }
 
@@ -126,4 +124,11 @@ img.exercise-img {
 
 div.card input[type=text] {
     width: 50px;
+}
+
+#card-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    width: 100%;
+    margin: auto;
 }

@@ -1,7 +1,10 @@
+let addExercise = false
 let exerciseListDiv = document.querySelector("div#card-list")
 let newExerciseDiv = document.querySelector("div#add-exercise")
 let newExerciseBtn = document.querySelector("#show-form")
 let myWorkoutDiv = document.querySelector("div#user-list")
+let newExerciseForm = document.querySelector(".add-exercise-form")
+const exerciseFormContainer = document.querySelector("#add-container");
 
 function pageSetup(){
     fetch("http://localhost:3000/exercises")
@@ -57,12 +60,14 @@ function createExercise(exercise){
         addExerciseBtn.type = "submit"
         addExerciseBtn.innerText = `Add Exercise`
 
-    exerciseCardDiv.append(exerciseImage, exerciseNameH4, exerciseZone, exerciseForm, addExerciseBtn)
+    let deleteBtn = document.createElement("button")
+        deleteBtn.innerText = "Delete"
+
+    exerciseCardDiv.append(exerciseImage, exerciseNameH4, exerciseZone, exerciseForm, addExerciseBtn, deleteBtn)
     exerciseListDiv.append(exerciseCardDiv)
 
     addExerciseBtn.addEventListener("click", function(evt){
-        // evt.preventDefault()
-
+        
         let newSetsInput = setsInput.value
         let newRepsInput = repsInput.value
 
@@ -85,9 +90,19 @@ function createExercise(exercise){
 
             createWorkout(updatedExercise)
         })
-
     })
 
+    deleteBtn.addEventListener("click", function(evt){
+        fetch(`http://localhost:3000/exercises/${exercise.id}`, {
+            method: "DELETE",
+            headers: {
+                "content-type": "application/json"
+            }
+        })
+        .then(res => res.json())
+        .then(() => exerciseCardDiv.remove())
+        // pageSetup()
+    })
 }
 
 function createWorkout(exercise){
@@ -147,45 +162,55 @@ function createWorkout(exercise){
             // pageSetup()
             workoutCardDiv.remove()
         })
-
     })
-
-    // addExerciseBtn.addEventListener("click", function(evt){
-    //     // evt.preventDefault()
-
-    //     let newSetsInput = setsInput.value
-    //     let newRepsInput = repsInput.value
-
-    //     fetch(`http://localhost:3000/exercises/${exercise.id}`,{
-    //         method: "PATCH",
-    //         headers: {
-    //             "Content-type": "application/json"
-    //         },
-    //         body: JSON.stringify({
-    //             sets: newSetsInput,
-    //             reps: newRepsInput,
-    //             isMyWorkout: true
-    //         })
-    //     })
-    //     .then(res => res.json())
-    //     .then(function(updatedExercise){
-    //         exercise.sets = updatedExercise.sets
-    //         exercise.reps = updatedExercise.reps
-    //         exercise.isMyWorkout = updatedExercise.isMyWorkout
-
-            
-    //     })
-
-    // })
-
 }
 
+newExerciseForm.addEventListener("submit", (evt) => {
+    evt.preventDefault()
+    let newExerciseName = evt.target[0].value
+    let newExerciseImage = evt.target[1].value
+    let newExerciseZone = evt.target[2].value
+    let newExerciseReqEquip = evt.target[3].value
 
+    fetch(`http://localhost:3000/exercises`, {
+        method: "POST",
+        headers: {
+            "content-type": "application/json"
+        },
+        body: JSON.stringify({
+            "name":newExerciseName,
+            "zone": newExerciseZone,
+            "sets": "",
+            "reps": "",
+            "image": newExerciseImage,
+            "isDone": false,
+            "requiresEqip": newExerciseReqEquip,
+            "isMyWorkout": false
+        })
+    })
+    .then(res => res.json())
+    .then(function(newExercise){
+        createExercise(newExercise)
+        addExercise = !addExercise
+        exerciseFormContainer.style.display = "none"
+    })
+})
 
-// function createRoutine(){
-//     let newExercise = document.createElement("li")
-    
-// }
+document.addEventListener("DOMContentLoaded", () => {
+    const addBtn = document.querySelector("#show-form");
+    addBtn.addEventListener("click", () => {
+      // hide & seek with the form
+      addExercise = !addExercise;
+      if (addExercise) {
+        exerciseFormContainer.style.display = "block";
+      } else {
+        exerciseFormContainer.style.display = "none";
+      }
+      
+    });
+  });
+  
+
 
 
 /* display the pictures of the exercise -> has add button, sets and reps 
