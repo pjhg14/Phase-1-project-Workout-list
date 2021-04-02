@@ -70,7 +70,8 @@ h2 {
 }
 
 #show-form {
-
+    background-color: black;
+    color: white;
 }
 
 #add-container {
