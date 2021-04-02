@@ -28,7 +28,8 @@ const addExerciseForm = document.querySelector("form#add-exercise-form")
 //user's routine list
 const routineContainer = document.querySelector("div#routine")
 const routineTabs = document.querySelector("div#routine-tabs")
-const mainTab = document.querySelector("button#main-tab")
+const buildButton = document.querySelector("button#build-button")
+const saveButton = document.querySelector("button#save-button")
 const routineList = document.querySelector("div#user-list")
 
 //List of exercises to choose from(query from server)
@@ -52,7 +53,7 @@ logInForm.addEventListener("submit", event => {
     let username = event.target.username.value
     submitUser(username)
     
-    showUserRoutine()
+    // showUserRoutine()
 
     logInForm.classList.remove("show")
 })
@@ -94,8 +95,16 @@ addExerciseForm.addEventListener("submit", event => {
 })
 
 //routine tabs
+buildButton.addEventListener("click", () => {
+    clearRoutine()
+
+    // exercises.forEach(exercise => {
+    //     addToRoutine(exercise)
+    // })
+})
+
 //when clicked saves current routine as new favorite routine
-mainTab.addEventListener("click", () => {
+saveButton.addEventListener("click", () => {
     if (!!currentUser) {
         fetch(routineURL, {
             method: "POST",
@@ -196,24 +205,27 @@ function addNewUser(username) {
 function submitUser(username) {
     fetch(`${userURL}?_embed=routines&username=${username}`)
         .then(resp => resp.json())
-        .then(queriedUser => {
-            currentUser = queriedUser
+        .then(queriedUsers => {
+            if (queriedUsers.length > 0) {
+                currentUser = queriedUsers[0]
             clearTabs()
             loadTabs()
+            }
+            //Otherwise skip, login unsuccessful
         })
 }
 
-function showUserRoutine() {
-    //checks if any user is logged in (don't proceed if not)
-    if (!!currentUser) {
-        //iterate throught all routines of current user & show routine as new button on tablist
-    }
+// function showUserRoutine() {
+//     //checks if any user is logged in (don't proceed if not)
+//     if (!!currentUser) {
+//         //iterate throught all routines of current user & show routine as new button on tablist
+//     }
 
     
 
-    //create event listener that displays currently selected tab as routine list
-    //(use same function that adds items to user list from exercise list)
-}
+//     //create event listener that displays currently selected tab as routine list
+//     //(use same function that adds items to user list from exercise list)
+// }
 
 function addNewExercise(name, zone, image, equip) {
     fetch(exerciseURL, {
@@ -368,13 +380,16 @@ function addToRoutine(exercise, card) {
 }
 
 function loadTabs() {
+    //show routine container
+    routineContainer.classList.remove("empty")
+    
+
     //Iterate through currentUser's routines, make a tab for each
     currentUser.routines.forEach((routine, index) => {
         //create tab
         let tab = document.createElement("button")
         tab.innerText = `favorite #${index + 1}`
-        tab.classList.add("tab-button")
-        tab.dataset.index = index
+        tab.classList.add("favorite-tab")
 
         let deleteButton = document.createElement("button")
         deleteButton.innerText = "X"
@@ -394,8 +409,9 @@ function loadTabs() {
             })
         })
 
+        //deletes routine on click
         deleteButton.addEventListener("click", () => {
-            fetch(routineURL + routine.id, {
+            fetch(`${routineURL}/${routine.id}`, {
                 method: "DELETE"
             })
                 .then(resp => resp.json())
@@ -412,10 +428,8 @@ function loadTabs() {
 }
 
 function clearTabs() {
-    routineTabs.querySelectorAll().forEach(tab => {
-        if (tab.id !== "main-tab") {
-            tab.remove()
-        }
+    routineTabs.querySelectorAll("button.favorite-tab").forEach(tab => {
+        tab.remove()
     })
 }
 

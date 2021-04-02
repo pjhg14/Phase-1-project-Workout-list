@@ -152,6 +152,48 @@
           "requiresEquip": false
         }
       ]
+    },
+    {
+      "userId": 1,
+      "exercises": [
+        {
+          "id": 1,
+          "name": "Back Squat",
+          "zone": "lower-body",
+          "image": "https://julielohre.com/wp-content/uploads/2017/11/Barbell-Back-Squat.jpg",
+          "requiresEquip": true,
+          "sets": 3,
+          "reps": 5
+        },
+        {
+          "id": 4,
+          "name": "L-sit",
+          "zone": "core",
+          "image": "https://cdn2.coachmag.co.uk/sites/coachmag/files/lsit_0.jpg",
+          "requiresEquip": false,
+          "sets": 3,
+          "reps": 5
+        },
+        {
+          "id": 10,
+          "name": "Lunges",
+          "zone": "lower-body",
+          "image": "https://i0.wp.com/www.brendanoneillfitness.com/wp-content/uploads/2015/07/Corrective-Lunge-Exercise-READY-01749.jpg?resize=300%2C300",
+          "requiresEquip": false,
+          "sets": 3,
+          "reps": 5
+        },
+        {
+          "id": 8,
+          "name": "Pull-ups",
+          "zone": "upper-body",
+          "image": "https://i.ytimg.com/vi/HRV5YKKaeVw/maxresdefault.jpg",
+          "requiresEquip": false,
+          "sets": 3,
+          "reps": 5
+        }
+      ],
+      "id": 2
     }
   ]
 }

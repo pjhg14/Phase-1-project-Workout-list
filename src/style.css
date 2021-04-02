@@ -69,6 +69,10 @@ h2 {
     text-align: center;
 }
 
+#show-form {
+
+}
+
 #add-container {
     height: auto;
     border-style: solid;
@@ -99,6 +103,11 @@ h2 {
 }
 
 .tab-button {
+    background-color: black;
+    color: white;
+}
+
+.favorite-tab {
     background-color: black;
     color: white;
 }
