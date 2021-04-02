@@ -27,11 +27,11 @@
         <button id="show-form">Add new Exercise</button>
 
         <!-- The list of chosen exercises -->
-        <h2> Added Exercises </h2>
+        <h2> My Workout </h2>
         <div id="user-list">
             <!-- Add div's here -->
             <!-- Test div -->
-            <div>
+            <div id="workout-card">
                 <img src="https://julielohre.com/wp-content/uploads/2017/11/Barbell-Back-Squat.jpg" alt="exercise img" class="exercise-img"/>
                 <h4>exercise name</h4>
                 <p>exercise zone</p>
@@ -46,7 +46,7 @@
         
         <!-- The list that will be populated from server -->
         <h2> Available exercises</h2>
-        <div id="card list">
+        <div id="card-list">
             <!-- Add div's here -->
             <div class="card">
                 <img src="https://julielohre.com/wp-content/uploads/2017/11/Barbell-Back-Squat.jpg" alt="exercise img" class="exercise-img"/>
@@ -56,7 +56,7 @@
                     <label for="set-field">Sets:</label>
                     <input type="text" name="set-field" placeholder="# of sets"/>
                     <label for="rep-field">Reps:</label>
-                    <input type="text" name="rep-field" placeholder="# of reps"/>
+                    <input required type="text" name="rep-field" placeholder="# of reps"/>
                     <br/>
                     <input type="submit" value="Add Exercise">
                 </form> 
