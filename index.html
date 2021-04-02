@@ -4,25 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="./src/index.js"></script>
+    <!-- <script defer src="./src/index.js"></script> -->
     <link rel="stylesheet" href="./src/style.css"/>
+    <!-- testing file -->
+    <script defer src="./src/test.js"></script>
     <title>RegemAid</title>
 </head>
 <body>
-    <header>
-        <img id="logo-img" src="" alt="Logo Img"/>
-        <h1>Workout To-do list</h1>
-        <div id="dropdown">
-            <!-- switch to "not currently logged in" img, maybe a white ! in a red background -->
-            <img id="user-img" src="./assets/user_default.png" alt="Current User"/>
-            <div id="dd-content">
-                <p>Not currently logged in</p>
-                <div id="log-in">
-                    <button id="li-button">Log In</button>
-                    <form id="log-in-form" class="dd-form">
-                        <input type="text" name="username" placeholder="Username">
-                        <input type="submit" value="Enter">
-                    </form>
+    <div id="box">
+        <!-- Heading title -->
+        <header>
+            <img id="logo-img" src="" alt="Logo Img"/>
+            <h1>Workout To-do list</h1>
+            <div id="dropdown">
+                <!-- switch to "not currently logged in" img, maybe a white ! in a red background -->
+                <img id="user-img" src="./assets/user_default.png" alt="Current User"/>
+                <div id="dd-content">
+                    <p id="login-conf">Not currently logged in</p>
+                    <div id="log-in">
+                        <button id="li-button">Log In</button>
+                        <form id="log-in-form" class="dd-form">
+                            <input type="text" name="username" placeholder="Username">
+                            <input type="submit" value="Enter">
+                        </form>
+                    </div>
+                    <p>-----or-----</p>
+                    <div id="sign-up">
+                        <button id="su-button">Sign Up</button>
+                        <form id="sign-up-form" class="dd-form">
+                            <input type="text" name="username" placeholder="Username">
+                            <input type="submit" value="Enter">
+                        </form>
+                    </div>
                 </div>
                 <div id="sign-up">
                     <button id="su-button">Sign Up</button>

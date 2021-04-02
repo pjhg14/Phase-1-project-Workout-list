@@ -4,10 +4,15 @@ body {
 
 header {
     text-align: center;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: inline-flex;
     width: 100%;
     justify-content: space-between;
+}
+
+#box {
+    background-color: steelblue;
+    border-radius: 1%;
 }
 
 /* header h1 {
@@ -57,11 +62,15 @@ https://www.w3schools.com/howto/howto_css_dropdown.asp
 #logo-img {
     width: 150px;
     height: 80px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 
 h2 {
     text-align: center;
+}
+
+#show-form {
+
 }
 
 #add-container {
@@ -82,15 +91,36 @@ h2 {
     display: none;
 }
 
+#routine.empty {
+    display: none;
+}
+
+#routine-tabs {
+    border: 1px solid black;
+    
+}
+
+.tab-button {
+    background-color: black;
+    color: white;
+}
+
+.favorite-tab {
+    background-color: black;
+    color: white;
+}
+
 #user-list {
     text-align: center;
     display: flex;
     overflow: auto;
     margin: 1rem 0;
+    margin-top: 0px;
     white-space: nowrap;
+    background-color: lightsteelblue;
 }
 
-#user-list div {
+.routine-card {
     display: inline-block;
     border-style: solid;
     border-color: rgb(153, 153, 153);
@@ -101,17 +131,31 @@ h2 {
     line-height: 1px;
 }
 
+.routine-card.done {
+    background-color: gray;
+    opacity: 50%;
+}
+
+#card-list {
+    background-color: lightsteelblue;
+    text-align: center;
+}
+
 .card {
     text-align: center;
     padding: 5px;
     width: 215px;
-    height: 400px;
+    height: 420px;
     display: inline-block;
     margin: 10px;
     border-style: solid;
     border-color: black;
     box-shadow: 3px 4px gray;
     line-height: 25px;
+}
+
+.card.selected {
+    display: none;
 }
 
 img.exercise-img {
