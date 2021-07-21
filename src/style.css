@@ -4,20 +4,19 @@ body {
 
 header {
     text-align: center;
-    /* border: 1px solid black; */
     display: inline-flex;
     width: 100%;
     justify-content: space-between;
+}
+
+h2 {
+    text-align: center;
 }
 
 #box {
     background-color: steelblue;
     border-radius: 1%;
 }
-
-/* header h1 {
-    border: 1px solid black;
-} */
 
 /* Special thanks to w3schools for their excellent tutorial for this drop-down menu 
 https://www.w3schools.com/howto/howto_css_dropdown.asp
@@ -56,17 +55,13 @@ https://www.w3schools.com/howto/howto_css_dropdown.asp
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    /* border: 1px solid black; */
+    
 }
 
 #logo-img {
-    width: 150px;
+    width: 80px;
     height: 80px;
-    /* border: 1px solid black; */
-}
-
-h2 {
-    text-align: center;
+    border-top-left-radius: 18%;
 }
 
 #show-form {
